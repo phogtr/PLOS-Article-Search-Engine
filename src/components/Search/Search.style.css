@@ -1,0 +1,12 @@
+.search-bar__wrapper {
+  text-align: center;
+}
+
+.search-bar__wrapper input {
+  font-size: 1.5rem;
+}
+
+.search-bar__wrapper button {
+  margin-left: 11px;
+  font-size: 1.5rem;
+}

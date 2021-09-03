@@ -1,0 +1,25 @@
+.card {
+  border: 1px solid black;
+  padding: 1rem 1rem;
+  width: 70%;
+}
+
+.author__wrapper h4 {
+  margin: 0.5rem 0;
+}
+
+.article__container,
+.article__empty {
+  border: 1px solid black;
+  padding: 1rem 1rem;
+  width: 50%;
+}
+
+.article__container h3 {
+  text-align: center;
+}
+
+.article__empty {
+  text-align: center;
+  font-size: 1.5rem;
+}
