@@ -1,7 +1,7 @@
 import React from "react";
 import "./Pagination.style.css";
 
-const PaginationBtn = ({ text, handlePageClick, currentIndex }) => {
+const PaginationBtn = ({ text, handlePageClick, currentIndex, pageSize, maxNumFound }) => {
   return (
     <button
       className="pagination-btn"
@@ -9,7 +9,7 @@ const PaginationBtn = ({ text, handlePageClick, currentIndex }) => {
       disabled={
         currentIndex === 0 && text === "Back"
           ? true
-          : currentIndex === 5461 && text === "Next"
+          : currentIndex >= maxNumFound - pageSize && text === "Next"
           ? true
           : false
       }

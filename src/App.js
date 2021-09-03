@@ -10,6 +10,7 @@ function App() {
   const [resultData, setResultData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [pageSize, setPageSize] = useState(10);
+  const [maxNumFound, setMaxNumFound] = useState(0);
 
   const onChangeInput = (event) => {
     setUserInput(event.target.value);
@@ -18,6 +19,7 @@ function App() {
   const onClickSearchBtn = () => {
     getData(userInput, currentIndex, pageSize).then((data) => {
       setResultData(data.response.docs);
+      setMaxNumFound(data.response.numFound);
     });
   };
 
@@ -27,7 +29,7 @@ function App() {
     }
   };
   const handleNextPage = () => {
-    if (currentIndex < 5461) {
+    if (currentIndex < maxNumFound - pageSize) {
       setCurrentIndex(currentIndex + pageSize);
     }
   };
@@ -67,11 +69,15 @@ function App() {
                 text="Back"
                 handlePageClick={handleBackPage}
                 currentIndex={currentIndex}
+                pageSize={pageSize}
+                maxNumFound={maxNumFound}
               />
               <PaginationBtn
                 text="Next"
                 handlePageClick={handleNextPage}
                 currentIndex={currentIndex}
+                pageSize={pageSize}
+                maxNumFound={maxNumFound}
               />
             </div>
           </>
