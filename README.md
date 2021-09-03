@@ -1,4 +1,4 @@
-# Search Engine PLOS Article
+# PLOS Article Search Engine 
 
 ## How to run the project in your environment
 
